@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Convite Campesino | Agroecología</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --verde-oscuro: #1d5c2d;
+            --verde-claro: #4a7c44;
+            --amarillo: #e9b33a;
+            --crema: #f9f8f4;
+            --blanco: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: var(--crema);
+        }
+
+        /* --- Header & Layout --- */
+        header {
+            background-color: var(--blanco);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 20px;
+        }
+
+        /* --- Logo Izquierdo --- */
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            min-width: 200px;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--verde-oscuro);
+        }
+
+        .logo-text {
+            color: var(--verde-oscuro);
+            font-weight: 800;
+            font-size: 0.9rem;
+            line-height: 1.1;
+        }
+
+        /* --- Menú Central --- */
+        nav { display: flex; align-items: center; }
+
+        .menu-item { position: relative; }
+
+        .menu-button {
+            background: none;
+            border: none;
+            padding: 20px 12px;
+            color: var(--verde-oscuro);
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.3s;
+        }
+
+        .menu-button:hover { color: var(--amarillo); }
+
+        /* Acordeón / Dropdown Animado */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--blanco);
+            min-width: 200px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .menu-item:hover .dropdown { max-height: 500px; }
+
+        .dropdown a {
+            color: var(--verde-oscuro);
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 0.8rem;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .dropdown a:hover {
+            background-color: var(--crema);
+            color: var(--amarillo);
+            padding-left: 25px;
+        }
+
+        /* --- Selector Idioma Derecho --- */
+        .lang-box {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: #eee;
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+
+        .lang-box select {
+            border: none;
+            background: none;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: var(--verde-oscuro);
+            cursor: pointer;
+        }
+
+        /* --- Main & Footer --- */
+        main {
+            flex: 1;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1500');
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        footer {
+            background-color: var(--verde-oscuro);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .social { display: flex; justify-content: center; gap: 15px; margin-bottom: 15px; }
+        .social a { color: var(--amarillo); text-decoration: none; }
+
+        .soaltech-footer {
+            font-size: 0.75rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 15px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="#" class="logo-section">
+            <div class="logo-img" style="background: url('https://i.ibb.co/v4m0YmC/logo-placeholder.png') center/cover;"></div>
+            <div class="logo-text">EL CONVITE<br>CAMPESINO</div>
+        </a>
+
+        <nav>
+            <div class="menu-item">
+                <button class="menu-button"><i data-lucide="users"></i> Quienes somos</button>
+                <div class="dropdown">
+                    <a href="#">Historia</a>
+                    <a href="#">Misión</a>
+                    <a href="#">Visión</a>
+                    <a href="#">Coordinaciones</a>
+                    <a href="#">Asociados</a>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <button class="menu-button"><i data-lucide="sprout"></i> Qué hacemos</button>
+                <div class="dropdown">
+                    <a href="#">Proyectos en curso</a>
+                    <a href="#">Proyectos desarrollados</a>
+                    <a href="#">Objetos de acción</a>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <button class="menu-button"><i data-lucide="megaphone"></i> Convite al día</button>
+                <div class="dropdown">
+                    <a href="#">Noticias</a>
+                    <a href="#">Eventos</a>
+                    <a href="#">Blog</a>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <button class="menu-button"><i data-lucide="archive"></i> Memorias</button>
+                <div class="dropdown">
+                    <a href="#">Publicaciones</a>
+                    <a href="#">Audiovisuales</a>
+                    <a href="#">Podcasts</a>
+                </div>
+            </div>
+
+            <a href="#" class="menu-button"><i data-lucide="map"></i> Geovisor</a>
+            <a href="#" class="menu-button"><i data-lucide="shopping-cart"></i> Mi canasta</a>
+            <a href="#" class="menu-button"><i data-lucide="at-sign"></i> Contáctenos</a>
+            <a href="#" class="menu-button"><i data-lucide="hand-heart"></i> Solidaridad</a>
+        </nav>
+
+        <div class="lang-box">
+            <i data-lucide="globe" style="width:14px"></i>
+            <select onchange="alert('Cambiando a: ' + this.value)">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="zh">Mandarin</option>
+            </select>
+        </div>
+    </div>
+</header>
+
+<main>
+    <h1>Agroecología en Movimiento</h1>
+</main>
+
+<footer>
+    <div class="social">
+        <a href="#"><i data-lucide="facebook"></i></a>
+        <a href="#"><i data-lucide="instagram"></i></a>
+        <a href="#"><i data-lucide="twitter"></i></a>
+    </div>
+    <div class="soaltech-footer">
+        © 2026 El Convite Campesino. Desarrollado por <strong>SOALTECH Soluciones de Alta Tecnología</strong>.
+    </div>
+</footer>
+
+<script>
+    lucide.createIcons();
+</script>
+
+</body>
+</html>
